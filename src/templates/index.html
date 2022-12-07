@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Important Notes</h1>
+    <ul>
+        <li><strong> To initialize the API</strong>
+            <p>I used Flask and Flask-PyMongo to create this application in a MacBook.
+                <p>-Open and run the 'app.py' file in the 'src' folder</p>
+                <p>-Open new terminal and run the following command to start the MongoDB process:</p>
+                <p> - If you're in MacOS run: brew services start mongodb-community@6.0</p>
+                <p> - If you're in Windows it may be neccessary to install the MongoDB with the following link, I'm not sure.
+                        https://www.mongodb.com/try/download/community</p>
+                <p>-Once both steps have been done successfully the API should be ready to use as a local host in the port 5000:
+                    htttp://localhost:5000/  </p>      
+            </p>
+        </li>
+
+        <li><strong>How to send Data</strong>
+            <p>The API allows anyone to send and receive data in JSON format.</p>
+            <p>To send data the user needs to write it in a JSON format like the following:</p>
+            <p> {"title":"Game 1", "title 2":"Game 2"}</p>
+            <p>you can copy it to an API platform like POSTMAN and send it to the endpoint '/create' with the 'POST' method to create two new projects named 'Game 1' and 'Game 2'.
+
+        </p></li>
+        <li><strong>Available Endpoints</strong></li>
+        <ul>
+            <li>
+                <strong>Create Projects</strong>
+                <ul>
+                    <li>Endpoint: '/create'</li>
+                    <li>Method 'POST'</li>
+                    <li>Send Format: {"title":"Game 1", "title 2":"Game 2"}</li>
+                </ul>
+            </li>
+            <li>
+                <strong>See Projects</strong>
+                <ul>
+                    <li>Endpoint: '/projects'</li>
+                    <li>Method 'GET'</li>
+                    <li>Send Format: -</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Add Updates to project</strong>
+                <ul>
+                    <li>Endpoint: '/add_update/&ltproject&gt'</li>
+                    <li>Method 'PUT'</li>
+                    <li>Send Format: {"update1":"Cards and Ranking", "title 2":"Another Update"} . Type the project's title instead of &ltproject&gt <u>as it appears in the JSON returned by the '/projects' endpoint</u></li>
+                </ul>
+            </li>
+            <li>
+                <strong>Add Relevant Points to Updates</strong>
+                <ul>
+                    <li>Endpoint: '/add_update_description/&ltproject&gt/&ltupdate&gt'</li>
+                    <li>Method 'PUT'</li>
+                    <li>Send Format: {"1":"Description1", "2":"Description2"}</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Search by Project's Date</strong>
+                <ul>
+                    <li>Endpoint: '/search/date/&ltdate&gt'</li>
+                    <li>Method 'GET'</li>
+                    <li>Send Format: Type the project's date instead of &ltdate&gt <u>as it appears in the JSON returned by the '/projects' endpoint</u></li>
+                </ul>
+            </li>
+            <li>
+                <strong>Search by Project Title</strong>
+                <ul>
+                    <li>Endpoint: '/search/name/&ltname&gt'</li>
+                    <li>Method 'GET'</li>
+                    <li>Send Format: Type the project's name instead of &ltname&gt <u>as it appears in the JSON returned by the '/projects' endpoint</u></li>
+                </ul>
+            </li>
+            <li>
+                <strong>Delete SINGLE project</strong>
+                <ul>
+                    <li>Endpoint: '/delete/&ltproject&gt'</li>
+                    <li>Method 'DELETE'</li>
+                    <li>Send Format: Type the project's title instead of &ltproject&gt <u>as it appears in the JSON returned by the '/projects' endpoint</u></li>
+                </ul>
+            </li>
+            <li>
+                <strong>Delete ALL project</strong>
+                <ul>
+                    <li>Endpoint: '/delete_all'</li>
+                    <li>Method 'DELETE'</li>
+                    <li>Send Format: -</li>
+                </ul>
+            </li>
+        </ul>
+    </ul>  
+    <h2>Personal Notes</h2>
+    <p>This was a very fun and interesting challenge, I always wondered how web pages and APIs were made, but for some reason I never sat down and tried to code one. I learned a lot about MongoDB and Flask.</p>
+    <p>I wasn't able to add a user authentication feature nor pagination due to time reasons, however i did start researching how to do t and even imported the werkzeug.security modules for hashing, it would have been very interesting.</p> 
+    <p>Without further notes, I hope you like my first API:) and hear from you soon, best regards! -Victor Lozano</p> 
+</body>
+</html>
